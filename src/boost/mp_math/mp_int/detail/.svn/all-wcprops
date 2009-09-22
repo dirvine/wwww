@@ -1,0 +1,59 @@
+K 25
+svn:wc:ra_dav:version-url
+V 55
+/svn/!svn/ver/206/trunk/src/boost/mp_math/mp_int/detail
+END
+primitive_ops.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 73
+/svn/!svn/ver/206/trunk/src/boost/mp_math/mp_int/detail/primitive_ops.hpp
+END
+modinv.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/206/trunk/src/boost/mp_math/mp_int/detail/modinv.hpp
+END
+meta_math.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/206/trunk/src/boost/mp_math/mp_int/detail/meta_math.hpp
+END
+modular_reduction.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 77
+/svn/!svn/ver/206/trunk/src/boost/mp_math/mp_int/detail/modular_reduction.hpp
+END
+prime_tab.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 69
+/svn/!svn/ver/206/trunk/src/boost/mp_math/mp_int/detail/prime_tab.hpp
+END
+div.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 63
+/svn/!svn/ver/206/trunk/src/boost/mp_math/mp_int/detail/div.hpp
+END
+modpow.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 66
+/svn/!svn/ver/206/trunk/src/boost/mp_math/mp_int/detail/modpow.hpp
+END
+integral_ops.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 72
+/svn/!svn/ver/206/trunk/src/boost/mp_math/mp_int/detail/integral_ops.hpp
+END
+string_conversion_constants.hpp
+K 25
+svn:wc:ra_dav:version-url
+V 87
+/svn/!svn/ver/206/trunk/src/boost/mp_math/mp_int/detail/string_conversion_constants.hpp
+END
