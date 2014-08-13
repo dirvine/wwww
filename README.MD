@@ -4,4 +4,3 @@ It can be done, just don't know if it will be me that can do it.
 
 
 [![build status drone.io] (https://drone.io/github.com/dirvine/wwww/status.png)](https://drone.io/github.com/dirvine/wwww/latest)
-[![](https://drone.io/drone/docs.drone.io/status.png)](https://drone.io/drone/docs.drone.io/latest)
