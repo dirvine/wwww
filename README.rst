@@ -1,5 +1,5 @@
-.. image:: https://api.travis-ci.org/dirvine/wwww.svg?branch=master
-   :target: https://travis-ci.org/dirvine/wwww
+.. image:: https://travis-ci.org/dirvine/wwww.svg?branch=master
+    :target: https://travis-ci.org/dirvine/wwww
       :alt: Travis CI build status
 
 .. image:: https://drone.io/github.com/dirvine/wwww/status.png
