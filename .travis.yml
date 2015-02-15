@@ -1,4 +1,4 @@
-# https://travis-ci.org/datagraph/librdf
+# https://travis-ci.org/dirvine/wwww
 language: cpp
 compiler:
   - clang
