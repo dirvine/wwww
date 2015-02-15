@@ -8,7 +8,7 @@
 
 .. image:: https://scan.coverity.com/projects/4280/badge.svg 
    :target: https://scan.coverity.com/projects/4280
-  :alt: Coverity Scan build status
+      :alt: Coverity Scan build status
 
 
 
