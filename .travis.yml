@@ -19,6 +19,8 @@ branches:
   only:
     - master
     - coverity
+script:
+  - "make" 
 
 # https://scan.coverity.com/projects/4280
 env:
@@ -34,5 +36,3 @@ addons:
     build_command: "cd build && make"
     branch_pattern: coverity
 
-script:
-  - "make" 
