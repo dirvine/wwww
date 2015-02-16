@@ -20,7 +20,7 @@ branches:
     - master
     - coverity
 script:
-  - "make" 
+  - "cd build && make" 
 
 # https://scan.coverity.com/projects/4280
 env:
