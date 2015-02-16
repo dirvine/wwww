@@ -35,4 +35,4 @@ addons:
     branch_pattern: coverity
 
 script:
-  - make 
+  - "cd build && make" 
