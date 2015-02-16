@@ -29,8 +29,9 @@ env:
 addons:
   coverity_scan:
     project:
-      name: dirvine/wwww
+      name: "dirvine/wwww"
     notification_email: david.irvine@maidsafe.net
-    build_command_prepend: cov-configure --comptype gcc --compiler $CC && cmake ../
-    build_command: make
+    build_command_prepend: "cov-configure --comptype gcc --compiler $CC && cmake ../"
+    build_command: "make"
     branch_pattern: coverity
+
