@@ -16,7 +16,7 @@ after_install:
   - cd build
   - cmake ../
 script:
-  - if [ "$COVERITY_SCAN_BRANCH" != 1 ]; then cmake ../  && make && make check; fi
+  - if [ "$COVERITY_SCAN_BRANCH" != 1 ]; then cmake ../  && make ; fi
 branches:
   only:
     - master
