@@ -15,8 +15,6 @@ after_install:
   - mkdir build
   - cd build
   - cmake ../
-script:
-  - if [ "$COVERITY_SCAN_BRANCH" != 1 ]; then cmake ../  && make ; fi
 branches:
   only:
     - master
@@ -35,3 +33,5 @@ addons:
     build_command: "make"
     branch_pattern: coverity
 
+script:
+  - make 
