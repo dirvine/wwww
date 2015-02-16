@@ -29,7 +29,7 @@ addons:
     project:
       name: "dirvine/wwww"
     notification_email: david.irvine@maidsafe.net
-    build_command_prepend: "cov-configure --comptype gcc --compiler $CC && cd ~/dirvine/wwww/build && cmake ../"
+    build_command_prepend: "cov-configure --comptype gcc --compiler $CC && mkdir ~/dirvine/wwww/build && cd ~/dirvine/wwww/build && cmake ../"
     build_command: "make"
     branch_pattern: coverity
 
