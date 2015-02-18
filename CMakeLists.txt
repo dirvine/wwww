@@ -12,7 +12,15 @@ set(wwww_VERSION
 
 # include specific modules
 set(CMAKE_MODULE_PATH "${CMAKE_SOURCE_DIR}/cmake")
-
+####################################
+# compile commands  
+####################################
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON) # works for Unix MakeFiles (also ninja)
+set(BUILD_SHARED_LIBS OFF)
+set(CMAKE_ERROR_DEPRECATED ON)
+set(CMAKE_ERROR_ON_ABSOLUTE_INSTALL_DESTINATION ON)
+set(EXPORT_COMPILE_COMMANDS ON)
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/bin")
 ####################################
 # pre-compiled headers support
 ####################################
@@ -89,15 +97,25 @@ configure_file(
 include_directories(
   "${CMAKE_CURRENT_BINARY_DIR}/include"
 )
+#################################
+# compile flags
+#################################
+include_directories("${PROJECT_SOURCE_DIR}/include/")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}  -Wall -Wextra -Wno-unused-parameter ")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -W -Wall -Wextra -Wunused-parameter -Wno-system-headers -Wno-deprecated")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wwrite-strings -Wundef -D_FORTIFY_SOURCE=2")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wuninitialized -Wparentheses")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wfloat-equal -Wstrict-overflow -Wstrict-overflow=5 -Wredundant-decls")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}  -pedantic -pedantic-errors -std=c++14")
+set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -O0 -g -ggdb ${COVERAGE_FLAGS}")
+
+##Target configs (add static link lines to eahc toolchain file speerately)
+set(CMAKE_FIND_LIBRARY_SUFFIXES ".a")
+set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -O2")
 
 
-# add_subdirectory(src/)
+add_subdirectory(src)
 
-
-if(ENABLE_TEST)
-  enable_testing()
-  add_subdirectory(src/test)
-endif()
 
 #################################
 # install pkg-config file
@@ -139,20 +157,9 @@ if(ENABLE_PACKAGING)
   include(CreatewwwwPackages)
 endif()
 
-include_directories("${PROJECT_SOURCE_DIR}/include")
-include_directories("${PROJECT_SOURCE_DIR}/src")
-
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}  -Wall -Wextra -Wno-unused-parameter ")
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -W -Wall -Wextra -Wunused-parameter -Wno-system-headers -Wno-deprecated")
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wwrite-strings -Wundef -D_FORTIFY_SOURCE=2")
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wuninitialized -Wparentheses")
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wfloat-equal -Wstrict-overflow -Wstrict-overflow=5 -Wredundant-decls")
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}  -pedantic -pedantic-errors -std=c++14")
-set(CMAKE_CXX_FLAGS_DEBUG "${CMAKE_CXX_FLAGS_DEBUG} -O0 -g -ggdb ${COVERAGE_FLAGS}")
-
-##Target configs (add static link lines to eahc toolchain file speerately)
-set(CMAKE_FIND_LIBRARY_SUFFIXES ".a")
-set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -O2")
+if(ENABLE_TEST)
+  enable_testing()
+endif()
 
 add_executable(wwww ${CMAKE_SOURCE_DIR}/src/wwww.cc)
 set_target_properties(wwww PROPERTIES LINK_SEARCH_START_STATIC 1)
