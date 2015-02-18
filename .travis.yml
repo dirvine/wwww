@@ -15,7 +15,7 @@ before_install:
 branches:
   all:
 script:
-  - "mkdir -p build && cd build && cmake ../ && make" 
+  - "mkdir -p build && cd build && cmake ../ && make && make test" 
 
 # https://scan.coverity.com/projects/4280
 env:
@@ -28,6 +28,6 @@ addons:
     notification_email: david.irvine@maidsafe.net
     build_command_prepend: "cov-configure --template --comptype gcc --compiler $CC &&
     mkdir -p build && cd build && cmake ../"
-    build_command: "cd build && make"
+    build_command: "cd build && make && make test"
     branch_pattern: coverity
 
