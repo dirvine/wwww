@@ -33,14 +33,8 @@ if(NOT CMAKE_CONFIGURATION_TYPES AND NOT CMAKE_BUILD_TYPE)
   set(CMAKE_BUILD_TYPE "Release")
 endif()
 
-option(ENABLE_PACKAGING
-  "Create build scripts for creating wwww packages"
-  OFF
-)
-option(ENABLE_TEST
-  "Enable the tests"
-  ON
-)
+option(ENABLE_PACKAGING "Create build scripts for creating wwww packages" OFF)
+option(ENABLE_TEST "Enable the tests" ON)
 
 ####################################
 # bootstrap
@@ -114,7 +108,6 @@ set(CMAKE_FIND_LIBRARY_SUFFIXES ".a")
 set(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -O2")
 
 
-add_subdirectory(src)
 
 
 #################################
@@ -160,6 +153,7 @@ endif()
 if(ENABLE_TEST)
   enable_testing()
 endif()
+add_subdirectory(src)
 
 add_executable(wwww ${CMAKE_SOURCE_DIR}/src/wwww.cc)
 set_target_properties(wwww PROPERTIES LINK_SEARCH_START_STATIC 1)
