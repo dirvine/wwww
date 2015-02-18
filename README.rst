@@ -1,4 +1,4 @@
-.. image:: https://travis-ci.org/dirvine/wwww.svg?branch=master
+.. image:: https://travis-ci.org/dirvine/wwww.svg
     :target: https://travis-ci.org/dirvine/wwww
     :alt: Travis CI build status
 
