@@ -18,4 +18,4 @@ It can be done, just don't know if it will be me that can do it.
 
 Required packages (to build for and test on arm hardfloat and softfloat, linux 32 & 64bit, mingw 32 & 64 bit)
 
-    sudo apt-get install  mingw32 mingw-w64 g++-mingw-w64 gcc-mingw-w64 gdb-mingw-w64-target mingw32-binutils binutils-mingw-w64 wine qemu qemu-system-arm qemu-system-x86 qemu-system qtemu qemu-utils cmake multiarch-support nsis
+    sudo apt-get install  gcc-arm-linux-gnueabihf gcc-arm-linux-gnueabi g++-arm-linux-gnueabihf g++-arm-linux-gnueabi mingw32 mingw-w64 gcc-mingw-w64-x86-64 g++-mingw-w64-x86-64 gcc-mingw-w64-i686 g++-mingw-w64-i686 g++-mingw-w64 gcc-mingw-w64 gdb-mingw-w64-target mingw32-binutils binutils-mingw-w64 wine qemu qemu-system-arm qemu-system-x86 qemu-system qtemu qemu-utils cmake multiarch-support nsis
