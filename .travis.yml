@@ -1,23 +1,21 @@
 # https://travis-ci.org/dirvine/wwww
 language: cpp
 compiler:
-  - clang
+#  - clang
   - gcc
 before_install:
   - sudo add-apt-repository ppa:ubuntu-toolchain-r/test -y
   - sudo add-apt-repository ppa:h-rayflood/llvm -y
   - sudo apt-get update -qq
   - sudo apt-get install -qq cmake
-  - if [ "$CXX" = "clang++" ]; then sudo apt-get install -qq clang-3.5 ; fi
-  - if [ "$CXX" = "clang++" ]; then export CXX="clang++-3.5" CC="clang-3.5" ; fi
+  # - if [ "$CXX" = "clang++" ]; then sudo apt-get install -qq clang-3.5 ; fi
+  # - if [ "$CXX" = "clang++" ]; then export CXX="clang++-3.5" CC="clang-3.5" ; fi
   - if [ "$CXX" = "g++" ]; then sudo apt-get install -qq g++-4.9 ; fi
   - if [ "$CXX" = "g++" ]; then export CXX="g++-4.9" CC="gcc-4.9" ; fi
 branches:
-  only:
-    - master
-    - coverity
+  all:
 script:
-  - "mkdir build && cd build && cmake ../ && make" 
+  - "mkdir -p build && cd build && cmake ../ && make" 
 
 # https://scan.coverity.com/projects/4280
 env:
@@ -29,7 +27,7 @@ addons:
       name: "dirvine/wwww"
     notification_email: david.irvine@maidsafe.net
     build_command_prepend: "cov-configure --template --comptype gcc --compiler $CC &&
-    mkdir build && cd build && cmake ../"
+    mkdir -p build && cd build && cmake ../"
     build_command: "cd build && make"
     branch_pattern: coverity
 
