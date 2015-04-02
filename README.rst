@@ -2,9 +2,6 @@
     :target: https://travis-ci.org/dirvine/wwww
     :alt: Travis CI build status
 
-.. image:: https://drone.io/github.com/dirvine/wwww/status.png
-   :target: https://drone.io/github.com/dirvine/wwww/latest
-   :alt: drone.io CI build status
 
 .. image:: https://scan.coverity.com/projects/4280/badge.svg 
    :target: https://scan.coverity.com/projects/4280
