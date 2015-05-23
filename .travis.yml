@@ -1,0 +1,32 @@
+# https://travis-ci.org/dirvine/wwww
+language: rust
+rust:
+    - 1.0.0
+    - nightly
+os:
+  - linux
+  - osx
+  
+branches:
+  all:
+sudo: required
+before_script:
+  - |
+      sudo apt-get update -qq &&
+      sudo apt-get install -qq libXxf86vm-dev libosmesa6-dev libcurl4-openssl-dev libelf-dev libdw-dev binutils-dev &&
+      pip install 'travis-cargo<0.2' --user &&
+      export PATH=$HOME/.local/bin:$PATH
+
+script:
+  - |
+      travis-cargo build &&
+      travis-cargo test &&
+      travis-cargo bench &&
+      travis-cargo doc
+after_success:
+  - travis-cargo doc-upload
+  - travis-cargo coveralls
+
+env:
+  global:
+  - secure: "HxsvTIjLQox6r/BATsRx0X5WADORNuqVFifTDFYcJTPCw2kTrMA7g4uQSdKUoez3SlCU3DdszjAe3JcQC7qZ5DRpMZw7CaKgtCXSDzN9F6pxBbeXdiPXvk2EI7SPhg1nznrlLIihye5hVV0ZLf4zz3BfV2KTDa6UbD5GArJsU+Y="
