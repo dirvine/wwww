@@ -1,0 +1,7 @@
+[package]
+name = "wwww"
+version = "0.1.0"
+authors = ["David Irvine <david.irvine@maidsafe.net>"]
+
+[dependencies]
+git = "https://github.com/PistonDevelopers/conrod"
