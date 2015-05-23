@@ -2,7 +2,7 @@
 language: rust
 rust:
     - 1.0.0
-    - nightly
+#    - nightly
 os:
   - linux
   - osx
