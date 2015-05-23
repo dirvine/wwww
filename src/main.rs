@@ -4,7 +4,6 @@
 //! wwww
 #![deny(missing_docs, dead_code, unused_variables, unused_features, unused_attributes)]
 #[cfg_attr(test, allow(dead_code))]
-// #![feature(io, core)]
 
 fn main() {
     println!("Hello, world!");
