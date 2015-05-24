@@ -2,9 +2,14 @@
        html_favicon_url = "http://maidsafe.net/img/favicon.ico",
               html_root_url = "http://dirvine.github.io/wwww")]
 //! wwww
-#![deny(missing_docs, dead_code, unused_variables, unused_features, unused_attributes)]
+//! Answer engine
+
+#![deny(missing_docs, unused_variables, unused_features, unused_attributes)]
+#![warn(dead_code)]
+
 #[cfg_attr(test, allow(dead_code))]
 
+/// Main 
 fn main() {
     println!("Hello, world!");
 }
