@@ -1,8 +1,8 @@
 # https://travis-ci.org/dirvine/wwww
 language: rust
 rust:
-    - 1.0.0
-#    - nightly
+    - stable
+    - nightly
 os:
   - linux
   - osx

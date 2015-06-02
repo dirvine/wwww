@@ -114,7 +114,7 @@ fn draw_ui<'a>(ui: &mut Ui, c: Context, g: &mut Graphics<'a>) {
     
     Label::new("Password : ")
         .color(orange().complement())
-        .mid_left_of(MIDDLE_COLUMN)
+        .bottom_left_of(MIDDLE_COLUMN)
         .set(PASSWORD, ui);
    
    let mut password_string = &mut "Enter Pssword".to_string(); 
@@ -130,13 +130,14 @@ fn draw_ui<'a>(ui: &mut Ui, c: Context, g: &mut Graphics<'a>) {
         .bottom_right_of(RIGHT_COLUMN)
         .set(BOTTOM_RIGHT, ui);
 
-    WidgetMatrix::new(COLS, ROWS)
-        .dim(ui.canvas_size(FOOTER))
-        .middle_of(FOOTER)
+    WidgetMatrix::new(5, 2)
+        .dim([100.0, 100.0])
+        .middle_of(MIDDLE_COLUMN)
         .each_widget(ui, |ui, n, _col, _row, xy, dim| {
             Button::new()
-                .color(blue().with_luminance(n as f32 / (COLS * ROWS) as f32))
+                .color(orange().complement())
                 .dim(dim)
+                .label(&n.to_string())
                 .point(xy)
                 .react(|| println!("Hey! {:?}", n))
                 .set(BUTTON + n, ui);
